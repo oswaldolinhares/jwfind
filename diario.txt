@@ -1,0 +1,11 @@
+::[OSWALDO_LINHARES]::
+
+17/05/2015 - Primeiro Commit
+
+Esse primeiro commit teve como resultado a inclusão dos seguintes arquivos:  README.mb - informações pertinentes ao projeto, [DOCUMENTATION]/jwfind.asta - arquivo do astah community com a primeira versão dos diagramas em UML, [DOCUMENTATION]/Casos de Uso - Use Case.png - arquivo de imagem da primeira versão do diagrama de casos de uso do sistema, [DOCUMENTATION]/Diagrama de Classes - Diagram Class.png - arquivo de imagem da primeira versão do diagrama de classes do sistema.
+
+No segundo commit a aplicação rails foi criada utilizando o banco de dados MySQL com o comando:
+
+$rails new jwfind -d mysql
+
+
