@@ -8,4 +8,10 @@ No segundo commit a aplicação rails foi criada utilizando o banco de dados MyS
 
 $rails new jwfind -d mysql
 
+No terceiro commit modificação do Diagraama de Casos de Uso, inclusão do login/logoff
+
+18/05/2015
+
+Commit 3 - Inclusão no arquivo Gemfile da linha gem 'devise' para a instalação do devise.
+
 
