@@ -14,4 +14,8 @@ No terceiro commit modificação do Diagraama de Casos de Uso, inclusão do logi
 
 Commit 3 - Inclusão no arquivo Gemfile da linha gem 'devise' para a instalação do devise.
 
+Commit 4 - Instalação do Devise com bundle install
 
+19/05/2015
+
+Commit 5 - rails g devise:install
