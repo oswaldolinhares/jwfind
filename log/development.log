@@ -1,0 +1,20 @@
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to DeviseCreateUsers (20150520202629)
+DEPRECATION WARNING: `#timestamp` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in change at /Users/oswaldolinhares/dev/jwfind/db/migrate/20150520202629_devise_create_users.rb:34)
+  [1m[35m (69.5ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (63.2ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (31.5ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) 
+  [1m[36m (5.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (25.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150520202629')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (30.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'jwfind_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
