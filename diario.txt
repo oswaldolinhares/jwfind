@@ -19,3 +19,9 @@ Commit 4 - Instalação do Devise com bundle install
 19/05/2015
 
 Commit 5 - rails g devise:install
+
+20/05/2015
+
+Commit 6 -rails generate devise Users
+
+Commit 7 - rake db:migrate
