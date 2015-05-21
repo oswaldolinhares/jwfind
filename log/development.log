@@ -236,3 +236,30 @@ Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89
 
 
 Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-05-21 12:47:41 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateAccounts (20150521155623)
+  [1m[35m (95.2ms)[0m  CREATE TABLE `accounts` (`id` int(11) auto_increment PRIMARY KEY, `city` varchar(255), `state` varchar(255), `idiom` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (3.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (24.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20150521155623')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (13.1ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'jwfind_development'
+  AND fk.table_name = 'accounts'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `accounts`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'jwfind_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
