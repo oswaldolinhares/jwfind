@@ -6,6 +6,15 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+
+    <% if current_user.present? %>
+      <%= current_user.email %>
+      <%= link_to "SAIR", destroy_user_session_path, :method => :delete  %>
+    <% else %>
+      <%= link_to "CADASTRAR", new_user_registration_path %>
+      <%= link_to "ENTRAR", new_user_session_path %>
+    <% end %>
+
 <body>
 
 <%= yield %>
