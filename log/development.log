@@ -881,3 +881,136 @@ Processing by AccountsController#index as HTML
   [1m[36mAccount Load (0.6ms)[0m  [1mSELECT `accounts`.* FROM `accounts`[0m
   Rendered accounts/index.html.erb within layouts/application (2.5ms)
 Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.6ms)
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` DESC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (6.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'me@example.com' LIMIT 1
+  [1m[36m (5.4ms)[0m  [1mROLLBACK[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` DESC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'me@example.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'me@example.com' LIMIT 1
+  [1m[36mSQL (3.5ms)[0m  [1mINSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (2, 'me@example.com', '$2a$10$hPK9iZPtMO6slEq2fvfG2O1Hexc7.2c41DpbxJy.f/944Xy/4llSu', '2015-05-22 14:42:38', '2015-05-22 14:42:38')[0m
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@admin.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (5, 'admin@admin.com', '$2a$10$eAMv2ysK8jNwCX4bKg6dK.cdvoQnFP..HFeDjAsnCjerfoRk04bMq', '2015-05-22 14:44:36', '2015-05-22 14:44:36')
+  [1m[36m (11.2ms)[0m  [1mCOMMIT[0m
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35mUser Load (1.9ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (2.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.9ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (19.9ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 1
+  [1m[36m (4.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` DESC LIMIT 1[0m
+  [1m[35mUser Load (1.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 5 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 5
+  [1m[36m (12.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (1.2ms)[0m  BEGIN
+  [1m[36mUser Exists (2.9ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@admin.com' LIMIT 1[0m
+  [1m[35mSQL (6.1ms)[0m  INSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (5, 'admin@admin.com', '$2a$10$Ug5OYYCPGpii07zoN8TWt.InA4/XDT.qzB5zhqyomHjYMoQ29RRo.', '2015-05-22 15:15:05', '2015-05-22 15:15:05')
+  [1m[36m (16.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin2@admin.com' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (1, 'admin2@admin.com', '$2a$10$jm0mJqgzgUWM1pY8wAQ/1uDaiMX4IdppdEQzozKlj8jpOSy9AI6s2', '2015-05-22 15:15:27', '2015-05-22 15:15:27')
+  [1m[36m (11.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin3@admin.com' LIMIT 1[0m
+  [1m[35mSQL (9.1ms)[0m  INSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (2, 'admin3@admin.com', '$2a$10$iAf14hzOkV3c622V.Zorsu81rCcTg/HbJdjMiSpcNA6luvzbs67Gy', '2015-05-22 15:15:41', '2015-05-22 15:15:41')
+Mysql2::Error: Duplicate entry '2' for key 'PRIMARY': INSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (2, 'admin3@admin.com', '$2a$10$iAf14hzOkV3c622V.Zorsu81rCcTg/HbJdjMiSpcNA6luvzbs67Gy', '2015-05-22 15:15:41', '2015-05-22 15:15:41')
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin3@admin.com' LIMIT 1[0m
+  [1m[35mSQL (1.6ms)[0m  INSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (2, 'admin3@admin.com', '$2a$10$8TyDGiEpMujayGjEBBYP/uIvk61znQuOCIXNGfWx8iK2AcQi4o6Ie', '2015-05-22 15:16:22', '2015-05-22 15:16:22')
+Mysql2::Error: Duplicate entry '2' for key 'PRIMARY': INSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (2, 'admin3@admin.com', '$2a$10$8TyDGiEpMujayGjEBBYP/uIvk61znQuOCIXNGfWx8iK2AcQi4o6Ie', '2015-05-22 15:16:22', '2015-05-22 15:16:22')
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin4@admin.com' LIMIT 1[0m
+  [1m[35mSQL (3.6ms)[0m  INSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (3, 'admin4@admin.com', '$2a$10$rv4oivq3YkK.FfxsNeMDjOTJKnUQqQp/2.CQfF4T3vQGWfK95Vqje', '2015-05-22 15:16:38', '2015-05-22 15:16:38')
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users`
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (2.8ms)[0m  [1mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (3.0ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 2
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.9ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mDELETE FROM `users` WHERE `users`.`id` = 3[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 5
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@admin.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (1, 'admin@admin.com', '$2a$10$XP25sx2XZoJ.jOuoE1ZtEOgRTLaxLOukBroNjQ1LD8HYs5ng0Gmne', '2015-05-22 15:21:16', '2015-05-22 15:21:16')
+  [1m[36m (11.7ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@admin.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 1
+  [1m[36m (4.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@admin.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('admin@admin.com', '$2a$10$9wITB0268o/5TuPtWwd32eRbezbk/vW1m1Y.BKr5pWzaK9/nl893a', '2015-05-22 15:23:40', '2015-05-22 15:23:40')
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM `users` WHERE `users`.`id` = 6
+  [1m[36m (2.3ms)[0m  [1mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@admin.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (1, 'admin@admin.com', '$2a$10$vC/0RpjWEs9VAzshHNoCKO4tg/ch.rvb8nNQmndf2Sv6oRBNlB12y', '2015-05-22 15:27:05', '2015-05-22 15:27:05')
+  [1m[36m (11.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users`  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM `users` WHERE `users`.`id` = 1[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@admin.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `users` (`id`, `email`, `encrypted_password`, `created_at`, `updated_at`) VALUES (1, 'admin@admin.com', '$2a$10$fgWDXC1AXeQjHfCGg0O0eOwDCnbKYQYKIMzxe1b9eNW7wqzQTYC02', '2015-05-22 15:28:09', '2015-05-22 15:28:09')
+  [1m[36m (11.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m

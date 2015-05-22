@@ -36,3 +36,7 @@ Commit 9 - rake db:create rake db:migrate
 
 Commit 10 - especificação  no arquivo routes.rb da página inicial
 
+Commit 11 - Alteração na view da aplicação para CADASTRAR/ENTRAR/SAIR usuário
+
+Commit 12 - Inclusão no arquivo seed.rb da criação do usuário administrador da aplicação
+
