@@ -263,3 +263,20 @@ WHERE fk.referenced_column_name is not null
   AND fk.table_name = 'users'
 [0m
   [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/" for ::1 at 2015-05-22 10:12:25 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (17.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by AccountsController#index as HTML
+  [1m[35mAccount Load (6.0ms)[0m  SELECT `accounts`.* FROM `accounts`
+  Rendered accounts/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 900ms (Views: 858.3ms | ActiveRecord: 24.5ms)
+
+
+Started GET "/assets/accounts.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-05-22 10:12:26 -0300
+
+
+Started GET "/assets/scaffolds.self-b7e771e98938b04bd7e4fdf487b6e364d1b32aa1b4cd1d9a0279688a65255854.css?body=1" for ::1 at 2015-05-22 10:12:26 -0300
+
+
+Started GET "/assets/accounts.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-05-22 10:12:26 -0300

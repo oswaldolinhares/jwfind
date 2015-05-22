@@ -25,3 +25,14 @@ Commit 5 - rails g devise:install
 Commit 6 -rails generate devise Users
 
 Commit 7 - rake db:migrate
+
+21/05/2015
+
+Commit 8 - rails generate scaffold account city:string state:string idiom:string
+
+Commit 9 - rake db:create rake db:migrate
+
+22/05/2015
+
+Commit 10 - especificação  no arquivo routes.rb da página inicial
+
