@@ -40,3 +40,6 @@ Commit 11 - Alteração na view da aplicação para CADASTRAR/ENTRAR/SAIR usuár
 
 Commit 12 - Inclusão no arquivo seed.rb da criação do usuário administrador da aplicação
 
+Commit 13 - Alteração do tamanho da senha obrigatória, de 8 para 4
+
+Commit 14 - Configuração para Gerar Views de usuário
